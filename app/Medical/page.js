@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import Input from "../components/ui/Input";
@@ -74,9 +74,9 @@ export default function VaccineTracker({ babyId }) {
       fetchVaccines();
       // fetchBabyBirthDate()
     }
-  }, [isAuth]);
+  }, [isAuth, fetchVaccines]);
 
-  const fetchVaccines = async () => {
+  const fetchVaccines = useCallback(async () => {
     try {
       const token = getAuthToken();
       const res = await axios.get("/api/vaccine", {
@@ -86,7 +86,7 @@ export default function VaccineTracker({ babyId }) {
     } catch (error) {
       console.error("Error fetching vaccines:", error);
     }
-  };
+  }, []);
 
   const initializeStandardSchedule = async () => {
     if (!babyBirthDate) return;
@@ -227,7 +227,7 @@ export default function VaccineTracker({ babyId }) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 dark:text-gray-200">
               <Calendar className="w-5 h-5 text-blue-600 dark:text-blue-500 " />
-              Set Baby's Birth Date
+              Set Baby&apos;s Birth Date
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">

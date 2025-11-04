@@ -40,11 +40,11 @@ export default function SignupBabyPage() {
 
   // Initialize babyErrors and babiesTouched arrays when noOfBabies changes
   useEffect(() => {
-    setBabyErrors(
-      Array.from({ length: noOfBabies }, (_, i) => babyErrors[i] || {})
+    setBabyErrors(prevErrors =>
+      Array.from({ length: noOfBabies }, (_, i) => prevErrors[i] || {})
     );
-    setBabiesTouched(
-      Array.from({ length: noOfBabies }, (_, i) => babiesTouched[i] || false)
+    setBabiesTouched(prevTouched =>
+      Array.from({ length: noOfBabies }, (_, i) => prevTouched[i] || false)
     );
   }, [noOfBabies]);
 
