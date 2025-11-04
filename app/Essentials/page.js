@@ -515,7 +515,7 @@ export default function Page() {
                   </span>
                 </div>
 
-                {item.notes && <p className="text-sm text-gray-500 italic">"{item.notes}"</p>}
+                {item.notes && <p className="text-sm text-gray-500 italic">&quot;{item.notes}&quot;</p>}
 
                 <div className="flex gap-2">
                   <Button size="sm" variant="outline" onClick={() => setEditingItem(item)} className="flex-1">

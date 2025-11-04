@@ -207,7 +207,7 @@ export default function VaccineTracker({ babyId }) {
       <div className="flex flex-wrap items-center justify-between">
         <div>
           <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200">Medical Records: Vaccines & Important Contacts</h2>
-          <p className="text-gray-600 dark:text-gray-300">Keep track of your baby's vaccination schedule and essential medical contacts for quick access.</p>
+          <p className="text-gray-600 dark:text-gray-300">Keep track of your baby&apos;s vaccination schedule and essential medical contacts for quick access.</p>
         </div>
         <Button
           onClick={() => {
@@ -231,7 +231,7 @@ export default function VaccineTracker({ babyId }) {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p className="text-gray-600 dark:text-gray-200">Enter your baby's birth date to automatically generate the standard vaccination schedule.</p>
+            <p className="text-gray-600 dark:text-gray-200">Enter your baby&apos;s birth date to automatically generate the standard vaccination schedule.</p>
             <div className="flex gap-4 flex-wrap">
               <Input type="date" value={babyBirthDate} onChange={(e) => setBabyBirthDate(e.target.value)} className="max-w-xs dark:bg-gray-700 dark:text-gray-200" />
               <Button onClick={initializeStandardSchedule} disabled={!babyBirthDate} className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600">
@@ -472,7 +472,7 @@ export default function VaccineTracker({ babyId }) {
                         <div>
                           <h4 className="font-medium">{vaccine.name}</h4>
                           <p className="text-sm text-gray-600 dark:text-gray-300">{vaccine.description || "No description"}</p>
-                          {vaccine.notes && <p className="text-sm text-gray-500 italic">"{vaccine.notes}"</p>}
+                          {vaccine.notes && <p className="text-sm text-gray-500 italic">&quot;{vaccine.notes}&quot;</p>}
                         </div>
                       </div>
 
